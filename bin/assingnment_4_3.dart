@@ -1,34 +1,30 @@
 import 'dart:io';
-import 'dart:convert';
 
 void main(List<String> arguments) {
-  List<String> inputlist = [];
+  List<String> InputList = [];
   bool condition = true;
-  List<int> inputlistasInt =
-  inputlist.map((data) => int.parse(data)).toList();
-  var largest_input = 0;
-  var smallest_input = 1;
+
+  int largest_input = 0;
+  int smallest_input = 1;
 
   while (condition) {
     String input = stdin.readLineSync();
     condition = input != '';
+    List<int> InputListAsInt =
+    InputList.map((data) => int.parse(data)).toList();
     if (input != '') {
-      inputlist.add(input);
+      InputList.add(input);
     }
     else if (input == '') {
-      List<int> inputlistasInt =
-      inputlist.map((data) => int.parse(data)).toList();
-      print(inputlistasInt);
       {
-        for (int b = 0; inputlistasInt.length > b; b++) {
-          if (inputlistasInt[b] > largest_input) {
-            largest_input = inputlistasInt[b];
+        for (int b = 0; InputListAsInt.length > b; b++) {
+          if (InputListAsInt[b] > largest_input) {
+            largest_input = InputListAsInt[b];
           }
-          if (inputlistasInt[b] < smallest_input) {
-            smallest_input = inputlistasInt[b];
-          }
+          if (InputListAsInt[b] < smallest_input) {
+            smallest_input = InputListAsInt[b];}
         }
       }
     }
-  }print(largest_input);  print(smallest_input);
+  }print('Largest number $largest_input');  print('Smallest number $smallest_input');
 }
